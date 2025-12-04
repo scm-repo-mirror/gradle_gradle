@@ -45,12 +45,12 @@ public class DefaultProjectDescriptor implements ProjectDescriptorInternal {
     private final PathToFileResolver fileResolver;
     private final ScriptFileResolver scriptFileResolver;
     private File dir;
-    private File canonicalDir;
-    private final ProjectDescriptorInternal parent;
+    private @Nullable File canonicalDir;
+    private final @Nullable ProjectDescriptorInternal parent;
     private final Set<ProjectDescriptorInternal> children = new LinkedHashSet<>();
     private ProjectDescriptorRegistry projectDescriptorRegistry;
     private Path path;
-    private String buildFileName;
+    private @Nullable String buildFileName;
 
     public DefaultProjectDescriptor(
         @Nullable ProjectDescriptorInternal parent, String name, File dir,
@@ -131,7 +131,7 @@ public class DefaultProjectDescriptor implements ProjectDescriptorInternal {
     }
 
     @Override
-    public ProjectDescriptorInternal getParent() {
+    public @Nullable ProjectDescriptorInternal getParent() {
         return parent;
     }
 
