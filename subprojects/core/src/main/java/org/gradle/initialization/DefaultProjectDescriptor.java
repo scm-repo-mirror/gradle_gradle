@@ -16,7 +16,6 @@
 package org.gradle.initialization;
 
 import com.google.common.base.Objects;
-import org.gradle.api.Project;
 import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.internal.DocumentationRegistry;
@@ -26,6 +25,7 @@ import org.gradle.internal.file.PathToFileResolver;
 import org.gradle.internal.initialization.BuildLogicFiles;
 import org.gradle.internal.scripts.DefaultScriptFileResolver;
 import org.gradle.internal.scripts.ScriptFileResolver;
+import org.gradle.internal.scripts.ScriptFileUtil;
 import org.gradle.util.Path;
 import org.gradle.util.internal.NameValidator;
 import org.jspecify.annotations.Nullable;
@@ -38,6 +38,7 @@ public class DefaultProjectDescriptor implements ProjectDescriptorInternal {
     public static final String INVALID_NAME_IN_INCLUDE_HINT = "Set the 'rootProject.name' or adjust the 'include' statement (see "
         + new DocumentationRegistry().getDslRefForProperty(Settings.class, "include(java.lang.String[])") + " for more details).";
 
+    @Deprecated // Do not immediately remove, since it's an old API that could have been used despite being internal
     public static final String BUILD_SCRIPT_BASENAME = BuildLogicFiles.BUILD_FILE_BASENAME;
 
     private String name;
@@ -174,11 +175,8 @@ public class DefaultProjectDescriptor implements ProjectDescriptorInternal {
         if (buildFileName != null) {
             return new File(getProjectDir(), buildFileName);
         }
-        File buildScriptFile = scriptFileResolver.resolveScriptFile(getProjectDir(), BUILD_SCRIPT_BASENAME);
-        if (buildScriptFile != null) {
-            return buildScriptFile;
-        }
-        return new File(getProjectDir(), Project.DEFAULT_BUILD_FILE);
+
+        return ScriptFileUtil.resolveBuildFile(getProjectDir(), scriptFileResolver);
     }
 
     @Override
