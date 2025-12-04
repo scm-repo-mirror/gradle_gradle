@@ -100,6 +100,8 @@ public class DefaultProjectStateRegistry implements ProjectStateRegistry, Closea
 
         children.sort(Comparator.comparing(ProjectIdentity::getBuildTreePath));
 
+        // TODO: Call to descriptor.getBuildFile() results in eager ScriptFileResolver call, which ends up notifying CC and registering it as an input
+        // This is not ideal, because this makes all project scripts part of the build-scoped fingerprint
         ImmutableProjectDescriptor immutableDescriptor = new DefaultImmutableProjectDescriptor(
             identity, descriptor.getProjectDir(), descriptor.getBuildFile(), parentIdentity, children
         );
