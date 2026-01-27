@@ -7,6 +7,15 @@
             "changes": [
                 "Method has been removed"
             ]
+        },
+        {
+            "type": "org.gradle.kotlin.dsl.WritePropertiesExtensionsKt",
+            "member": "Method org.gradle.kotlin.dsl.WritePropertiesExtensionsKt.setProperties(org.gradle.api.tasks.WriteProperties,kotlin.Pair[])",
+            "acceptation": "Write properties extension",
+            "changes": [
+                "Method added to public class",
+                "ANNOTATION_ADDED"
+            ]
         }
     ]
 }
