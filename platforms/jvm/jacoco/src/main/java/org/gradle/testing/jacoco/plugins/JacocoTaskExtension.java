@@ -122,7 +122,7 @@ public abstract class JacocoTaskExtension {
      * Property 'destinationFile' is declared as an output property of an object with type JacocoTaskExtension but does not have a task associated with it.
      *
      * @return the destination directory as a file
-     * @since 9.1.0
+     * @since 9.5.0
      */
     @Nullable
     @Deprecated
