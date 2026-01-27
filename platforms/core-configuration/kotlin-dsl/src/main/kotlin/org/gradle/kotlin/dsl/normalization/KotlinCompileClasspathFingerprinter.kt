@@ -155,11 +155,12 @@ private class Snapshotter {
     private val buildSession = toolchains.createBuildSession()
 
     fun snapshot(file: File): Map<String, ClassSnapshot> {
-        val snapshotOperation = toolchains.jvm.createClasspathSnapshottingOperation(file.toPath())
+        val snapshotOperation = toolchains.jvm.classpathSnapshottingOperationBuilder(file.toPath())
             .apply {
                 this[JvmClasspathSnapshottingOperation.GRANULARITY] = ClassSnapshotGranularity.CLASS_LEVEL
                 this[JvmClasspathSnapshottingOperation.PARSE_INLINED_LOCAL_CLASSES] = true
             }
+            .build()
         return buildSession.executeOperation(snapshotOperation).classSnapshots
     }
 }

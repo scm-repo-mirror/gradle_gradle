@@ -25,7 +25,6 @@ import org.gradle.kotlin.dsl.support.compileKotlinScriptToDirectory
 import org.gradle.kotlin.dsl.support.scriptDefinitionFromTemplate
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
-import org.jetbrains.kotlin.buildtools.api.arguments.CommonCompilerArguments
 import org.jetbrains.kotlin.buildtools.api.arguments.ExperimentalCompilerArgument
 import org.jetbrains.kotlin.buildtools.api.arguments.JvmCompilerArguments
 import org.jetbrains.kotlin.scripting.definitions.ScriptDefinition
@@ -116,7 +115,7 @@ class KotlinScriptCompilerTest : TestWithTempFiles() {
     fun btCompileKotlinScriptTo(
         outputDir: File,
         script: String,
-        configuration: (JvmCompilerArguments) -> Unit
+        configuration: (JvmCompilerArguments.Builder) -> Unit
     ) {
         btCompileKotlinScriptToDirectory(
             outputDir,

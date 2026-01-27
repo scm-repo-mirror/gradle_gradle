@@ -175,8 +175,8 @@ private class BTCompiler {
     private val buildSession = toolchains.createBuildSession()
 
     @OptIn(ExperimentalCompilerArgument::class)
-    fun compile(sources: List<Path>, destinationDirectory: Path, arguments: (JvmCompilerArguments) -> Unit): CompilationResult {
-        val operation = toolchains.jvm.createJvmCompilationOperation(sources, destinationDirectory)
+    fun compile(sources: List<Path>, destinationDirectory: Path, arguments: (JvmCompilerArguments.Builder) -> Unit): CompilationResult {
+        val operation = toolchains.jvm.jvmCompilationOperationBuilder(sources, destinationDirectory)
 
         // compilation operation config
         operation[JvmCompilationOperation.COMPILER_ARGUMENTS_LOG_LEVEL] = CompilerArgumentsLogLevel.DEBUG
@@ -199,7 +199,7 @@ private class BTCompiler {
         // explicit compiler argument
         arguments.invoke(operation.compilerArguments)
 
-        return buildSession.executeOperation(operation)
+        return buildSession.executeOperation(operation.build())
     }
 }
 
@@ -213,7 +213,7 @@ fun btCompileKotlinScriptToDirectory(
     compilerOptions: KotlinCompilerOptions,
     moduleName: String,
     scriptFile: File,
-    configuration: (JvmCompilerArguments) -> Unit,
+    configuration: (JvmCompilerArguments.Builder) -> Unit,
 ): String {
 
     val retVal = NameUtils.getScriptNameForFile(scriptFile.name).asString()
