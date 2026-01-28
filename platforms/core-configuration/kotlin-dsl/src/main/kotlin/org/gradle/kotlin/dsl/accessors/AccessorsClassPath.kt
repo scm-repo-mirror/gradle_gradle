@@ -46,10 +46,6 @@ import org.gradle.internal.fingerprint.LineEndingSensitivity
 import org.gradle.internal.hash.HashCode
 import org.gradle.internal.hash.Hasher
 import org.gradle.internal.hash.Hashing
-import org.gradle.internal.operations.BuildOperationContext
-import org.gradle.internal.operations.BuildOperationDescriptor
-import org.gradle.internal.operations.BuildOperationRunner
-import org.gradle.internal.operations.CallableBuildOperation
 import org.gradle.internal.properties.InputBehavior.NON_INCREMENTAL
 import org.gradle.internal.service.scopes.Scope
 import org.gradle.internal.service.scopes.ServiceScope
@@ -81,6 +77,7 @@ import org.jetbrains.org.objectweb.asm.signature.SignatureReader
 import org.jetbrains.org.objectweb.asm.signature.SignatureVisitor
 import java.io.Closeable
 import java.io.File
+import java.util.Optional
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 
@@ -93,7 +90,6 @@ class ProjectAccessorsClassPathGenerator @Inject internal constructor(
     private val inputFingerprinter: InputFingerprinter,
     private val workspaceProvider: KotlinDslWorkspaceProvider,
     private val asyncIO: AsyncIOScopeFactory,
-    private val buildOperationRunner: BuildOperationRunner,
 ) {
 
     private
@@ -105,16 +101,8 @@ class ProjectAccessorsClassPathGenerator @Inject internal constructor(
             return AccessorsClassPath.empty
         }
         return classPathCache.computeIfAbsent(classLoaderScope) {
-            buildOperationRunner.call(object : CallableBuildOperation<AccessorsClassPath> {
-                override fun call(context: BuildOperationContext): AccessorsClassPath {
-                    return buildAccessorsClassPathFor(classLoaderScope, scriptTarget, classPath)
-                        ?: AccessorsClassPath.empty
-                }
-
-                override fun description(): BuildOperationDescriptor.Builder {
-                    return BuildOperationDescriptor.displayName("Build accessors classpath for $scriptTarget")
-                }
-            })
+            buildAccessorsClassPathFor(classLoaderScope, scriptTarget, classPath)
+                ?: AccessorsClassPath.empty
         }
     }
 
@@ -181,6 +169,10 @@ class GenerateProjectAccessors(
         const val CLASSPATH_INPUT_PROPERTY = "classpath"
         const val SOURCES_OUTPUT_PROPERTY = "sources"
         const val CLASSES_OUTPUT_PROPERTY = "classes"
+    }
+
+    override fun getBuildOperationWorkType(): Optional<String> {
+        return Optional.of("GENERATE_PROJECT_ACCESSORS")
     }
 
     override fun execute(executionContext: ExecutionContext): WorkOutput {
