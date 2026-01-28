@@ -29,4 +29,8 @@ class GradleBuildToolRootProject(
             subProject(UtilProject)
             subProject(UtilPerformanceProject)
         }
+
+        params {
+            param("env.GRADLE_OPTS", "-Dorg.gradle.unsafe.isolated-projects=false")
+        }
     })
