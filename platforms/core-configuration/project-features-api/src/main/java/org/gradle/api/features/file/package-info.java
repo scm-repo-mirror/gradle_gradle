@@ -13,5 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @org.jspecify.annotations.NullMarked
-package org.gradle.api.internal.registration;
+package org.gradle.api.features.file;
