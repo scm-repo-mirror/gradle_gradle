@@ -22,16 +22,16 @@ import org.gradle.api.NamedDomainObjectCollectionSchema;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.initialization.Settings;
-import org.gradle.api.internal.plugins.BindsProjectFeature;
-import org.gradle.api.internal.plugins.BindsProjectType;
-import org.gradle.api.internal.plugins.BuildModel;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.BindsProjectFeature;
+import org.gradle.api.features.plugins.BindsProjectType;
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.Definition;
 import org.gradle.api.internal.plugins.ProjectFeatureBindingDeclaration;
 import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilderInternal;
-import org.gradle.api.internal.plugins.ProjectFeatureBinding;
+import org.gradle.api.features.plugins.ProjectFeatureBinding;
 import org.gradle.api.internal.plugins.ProjectTypeBindingBuilderInternal;
-import org.gradle.api.internal.plugins.ProjectTypeBinding;
-import org.gradle.api.internal.plugins.TargetTypeInformation;
+import org.gradle.api.features.plugins.ProjectTypeBinding;
+import org.gradle.api.features.plugins.TargetTypeInformation;
 import org.gradle.api.internal.tasks.properties.InspectionScheme;
 import org.gradle.api.problems.Severity;
 import org.gradle.api.problems.internal.GradleCoreProblemGroup;
@@ -116,7 +116,7 @@ public class DefaultProjectFeatureDeclarations implements ProjectFeatureDeclarat
         }
 
         if (binding.targetDefinitionType() instanceof TargetTypeInformation.BuildModelTargetTypeInformation &&
-            ((TargetTypeInformation.BuildModelTargetTypeInformation<?>) binding.targetDefinitionType()).buildModelType.equals(BuildModel.None.class)) {
+            ((TargetTypeInformation.BuildModelTargetTypeInformation<?>) binding.targetDefinitionType()).getBuildModelType().equals(BuildModel.None.class)) {
 
             InternalProblem bindingTypeProblem = problemReporter.internalCreate(builder -> builder
                 .id("bind=to-build-model-none", "Project features binds to BuildModel.None", GradleCoreProblemGroup.configurationUsage())

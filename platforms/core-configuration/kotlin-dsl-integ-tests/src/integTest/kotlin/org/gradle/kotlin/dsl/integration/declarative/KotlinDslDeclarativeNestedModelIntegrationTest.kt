@@ -17,11 +17,11 @@
 package org.gradle.kotlin.dsl.integration.declarative
 
 import org.gradle.api.features.registration.TaskRegistrar
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectTypeBinding
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Nested
 import org.junit.Assert

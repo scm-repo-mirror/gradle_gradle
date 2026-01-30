@@ -17,8 +17,8 @@
 package org.gradle.plugin.software.internal;
 
 import org.gradle.api.internal.DynamicObjectAware;
-import org.gradle.api.internal.plugins.BuildModel;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.Definition;
 import org.gradle.api.model.ObjectFactory;
 import org.gradle.internal.extensibility.ExtensibleDynamicObject;
 import org.gradle.internal.metaobject.DynamicInvokeResult;

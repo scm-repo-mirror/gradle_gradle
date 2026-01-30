@@ -17,14 +17,14 @@
 package org.gradle.plugin.software.internal;
 
 import org.gradle.api.Action;
-import org.gradle.api.internal.plugins.BuildModel;
-import org.gradle.api.internal.plugins.DeclaredProjectFeatureBindingBuilder;
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.DeclaredProjectFeatureBindingBuilder;
 import org.gradle.api.internal.plugins.DeclaredProjectFeatureBindingBuilderInternal;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.Definition;
 import org.gradle.api.internal.plugins.ProjectFeatureBindingDeclaration;
-import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilder;
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder;
 import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilderInternal;
-import org.gradle.api.internal.plugins.ProjectFeatureApplyAction;
+import org.gradle.api.features.plugins.ProjectFeatureApplyAction;
 import org.gradle.util.Path;
 
 import java.util.List;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,28 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
-import org.gradle.api.internal.plugins.software.RegistersSoftwareTypes;
+import org.gradle.api.Incubating;
 
 /**
- * A transformation action for configuring a build model from a definition.  Instances of this interface should be
- * registered with the {@link RegistersSoftwareTypes} annotation on a project plugin.
+ * A transformation action for configuring a build model from a definition and executing any necessary build logic.
  *
  * @param <T> the type of the definition
  * @param <U> the type of the build model
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface ProjectTypeApplyAction<T, U> {
+    /**
+     * Apply configuration from the definition to the build model and execute any necessary build logic.
+     *
+     * @param context the application context
+     * @param definition the definition
+     * @param buildModel the build model
+     *
+     * @since 9.5.0
+     */
     void transform(ProjectFeatureApplicationContext context, T definition, U buildModel);
 }

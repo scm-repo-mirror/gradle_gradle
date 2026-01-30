@@ -16,6 +16,11 @@
 
 package org.gradle.api.internal.plugins;
 
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.Definition;
+import org.gradle.api.features.plugins.ProjectFeatureApplyAction;
+import org.gradle.api.features.plugins.TargetTypeInformation;
+
 import java.util.Optional;
 
 /**

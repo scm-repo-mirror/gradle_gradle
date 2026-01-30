@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
-import org.gradle.api.internal.plugins.TargetTypeInformation.BuildModelTargetTypeInformation;
-import org.gradle.api.internal.plugins.TargetTypeInformation.DefinitionTargetTypeInformation;
+import org.gradle.api.Incubating;
+import org.gradle.api.features.plugins.TargetTypeInformation.BuildModelTargetTypeInformation;
+import org.gradle.api.features.plugins.TargetTypeInformation.DefinitionTargetTypeInformation;
 
 /**
  * A builder for creating bindings between project feature definition objects
  * and other definition objects in the build as well as declaring build logic
  * associated with the binding.
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface ProjectFeatureBindingBuilder {
     /**
      * Create a binding between a project feature definition object and a parent definition object.
@@ -36,6 +40,8 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetDefinition> the type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
     <
         OwnDefinition extends Definition<OwnBuildModel>,
@@ -60,6 +66,8 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetDefinition> the type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
     default <
         OwnDefinition extends Definition<OwnBuildModel>,
@@ -87,6 +95,8 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetBuildModel> the type of the build model type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
     default <
         OwnDefinition extends Definition<OwnBuildModel>,
@@ -112,6 +122,8 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetDefinition> the type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
     static <
         OwnDefinition extends Definition<OwnBuildModel>,
@@ -136,6 +148,8 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetBuildModel> the type of the build model type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
     static <
         OwnDefinition extends Definition<OwnBuildModel>,
@@ -156,7 +170,10 @@ public interface ProjectFeatureBindingBuilder {
      * @param <OwnDefinition> the type of the definition object for this feature
      * @param <OwnBuildModel> the type of the build model object for this feature
      * @param <TargetDefinition> the type of the parent definition object this feature can be bound to
+     *
+     * @since 9.5.0
      */
+    @Incubating
     class ModelBindingTypeInformation<
         OwnDefinition extends Definition<OwnBuildModel>,
         OwnBuildModel extends BuildModel,
@@ -166,6 +183,14 @@ public interface ProjectFeatureBindingBuilder {
         private final Class<OwnDefinition> definitionType;
         private final TargetTypeInformation<TargetDefinition> targetType;
 
+        /**
+         * Constructs a new {@code ModelBindingTypeInformation}.
+         *
+         * @param definitionType - the type of the project feature definition object
+         * @param targetType - information about the target type of the binding
+         *
+         * @since 9.5.0
+         */
         public ModelBindingTypeInformation(
             Class<OwnDefinition> definitionType,
             TargetTypeInformation<TargetDefinition> targetType
@@ -174,10 +199,24 @@ public interface ProjectFeatureBindingBuilder {
             this.targetType = targetType;
         }
 
+        /**
+         * The type of the project feature definition object.
+         *
+         * @return the definition type
+         *
+         * @since 9.5.0
+         */
         public Class<OwnDefinition> getDefinitionType() {
             return definitionType;
         }
 
+        /**
+         * Information about the target type of the binding.
+         *
+         * @return the target type information
+         *
+         * @since 9.5.0
+         */
         public TargetTypeInformation<TargetDefinition> getTargetType() {
             return targetType;
         }

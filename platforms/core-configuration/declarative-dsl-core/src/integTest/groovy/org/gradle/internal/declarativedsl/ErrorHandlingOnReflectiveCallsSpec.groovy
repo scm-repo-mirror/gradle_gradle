@@ -16,11 +16,11 @@
 
 package org.gradle.internal.declarativedsl
 
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectTypeBinding
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
 import org.gradle.api.internal.plugins.software.RegistersSoftwareTypes
 import org.gradle.kotlin.dsl.fixtures.AbstractKotlinIntegrationTest
 import org.junit.Before

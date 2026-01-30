@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,25 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
+
+import org.gradle.api.Incubating;
 
 /**
- * A registration action for configuring a project type binding.  Instances of this interface should be
- * registered with the {@link BindsProjectType} annotation
+ * A registration action for configuring a project feature binding.  Instances of this interface should be
+ * registered with the {@link BindsProjectFeature} annotation
  * on a project plugin.
+ *
+ * @since 9.5.0
  */
-public interface ProjectTypeBinding {
-    void bind(ProjectTypeBindingBuilder builder);
+@Incubating
+public interface ProjectFeatureBinding {
+    /**
+     * Configure the project feature binding.
+     *
+     * @param builder the builder to use to configure the binding
+     *
+     * @since 9.5.0
+     */
+    void bind(ProjectFeatureBindingBuilder builder);
 }

@@ -17,7 +17,7 @@
 package org.gradle.api.plugins.instrumentation;
 
 import org.gradle.api.file.DirectoryProperty;
-import org.gradle.api.internal.plugins.BuildModel;
+import org.gradle.api.features.plugins.BuildModel;
 
 public interface InstrumentClassesModel extends BuildModel {
     DirectoryProperty getInstrumentedClassesDirectory();

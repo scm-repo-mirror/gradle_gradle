@@ -16,11 +16,11 @@
 
 package org.gradle.plugin.software.internal
 
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.TargetTypeInformation
-import org.gradle.api.internal.plugins.TargetTypeInformation.BuildModelTargetTypeInformation
-import org.gradle.api.internal.plugins.TargetTypeInformation.DefinitionTargetTypeInformation
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.TargetTypeInformation
+import org.gradle.api.features.plugins.TargetTypeInformation.BuildModelTargetTypeInformation
+import org.gradle.api.features.plugins.TargetTypeInformation.DefinitionTargetTypeInformation
 import kotlin.reflect.KClass
 import kotlin.reflect.full.allSupertypes
 

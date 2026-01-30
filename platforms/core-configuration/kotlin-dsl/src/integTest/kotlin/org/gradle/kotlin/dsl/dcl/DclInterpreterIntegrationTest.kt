@@ -16,14 +16,14 @@
 
 package org.gradle.kotlin.dsl.dcl
 
-import org.gradle.api.internal.plugins.BindsProjectFeature
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilder
-import org.gradle.api.internal.plugins.ProjectFeatureBinding
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
-import org.gradle.api.internal.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.BindsProjectFeature
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder
+import org.gradle.api.features.plugins.ProjectFeatureBinding
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.ProjectTypeBinding
 import org.gradle.api.features.registration.TaskRegistrar
 import org.gradle.kotlin.dsl.accessors.DCL_ENABLED_PROPERTY_NAME
 import org.gradle.kotlin.dsl.fixtures.AbstractKotlinIntegrationTest

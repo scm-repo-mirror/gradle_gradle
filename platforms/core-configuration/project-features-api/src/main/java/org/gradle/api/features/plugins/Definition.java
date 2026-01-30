@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
+
+import org.gradle.api.Incubating;
 
 /**
  * A marker interface for definition objects that have a build model.
+ *
+ * @param <T> the type of the associated build model
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface Definition<T extends BuildModel> {
 }

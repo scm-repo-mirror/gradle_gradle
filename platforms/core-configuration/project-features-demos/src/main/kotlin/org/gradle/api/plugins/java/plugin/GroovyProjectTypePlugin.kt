@@ -19,9 +19,9 @@ package org.gradle.api.plugins.java.plugin
 import org.apache.commons.lang3.StringUtils.capitalize
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
-import org.gradle.api.internal.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.ProjectTypeBinding
 import org.gradle.api.internal.plugins.features.dsl.bindProjectType
 import org.gradle.api.plugins.internal.java.DefaultGroovyProjectType
 import org.gradle.api.plugins.java.GroovyClasses

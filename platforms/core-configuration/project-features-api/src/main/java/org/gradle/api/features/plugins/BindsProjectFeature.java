@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
 import org.gradle.api.Incubating;
 
@@ -24,14 +24,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation that can be applied to implementations of {@link ProjectTypeBinding}
- * to indicate that the registration should be automatically discovered and applied by Gradle.
+ * Annotation that can be applied to project plugins to register a {@link ProjectFeatureBinding}.
  *
- * This annotation is used by project plugins that want to contribute project type bindings.
+ * @since 9.5.0
  */
 @Incubating
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface BindsProjectType {
-    Class<? extends ProjectTypeBinding> value();
+public @interface BindsProjectFeature {
+    /**
+     * The project feature binding class to use.
+     *
+     * @since 9.5.0
+     */
+    Class<? extends ProjectFeatureBinding> value();
 }

@@ -16,6 +16,8 @@
 
 package org.gradle.api.internal.plugins;
 
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder;
+
 import java.util.List;
 
 public interface ProjectFeatureBindingBuilderInternal extends ProjectFeatureBindingBuilder {

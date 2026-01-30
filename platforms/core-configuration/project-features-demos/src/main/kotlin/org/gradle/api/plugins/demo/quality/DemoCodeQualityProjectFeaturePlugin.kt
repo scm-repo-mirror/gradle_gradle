@@ -20,9 +20,9 @@ import org.apache.commons.lang3.StringUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.internal.plugins.BindsProjectFeature
-import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilder
-import org.gradle.api.internal.plugins.ProjectFeatureBinding
+import org.gradle.api.features.plugins.BindsProjectFeature
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder
+import org.gradle.api.features.plugins.ProjectFeatureBinding
 import org.gradle.api.internal.plugins.features.dsl.bindProjectFeatureToBuildModel
 import org.gradle.api.internal.plugins.features.dsl.bindProjectFeatureToDefinition
 import org.gradle.api.plugins.java.HasSources

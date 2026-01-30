@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
+import org.gradle.api.Incubating;
 import org.gradle.api.features.file.ProjectFeatureLayout;
 import org.gradle.api.features.registration.ConfigurationRegistrar;
 import org.gradle.api.features.registration.TaskRegistrar;
@@ -25,7 +26,10 @@ import org.gradle.api.features.registration.TaskRegistrar;
  *
  * @param <OwnDefinition> the type of the project type or project feature definition object
  * @param <OwnBuildModel> the type of the build model object for this project type or project feature
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface DeclaredProjectFeatureBindingBuilder<OwnDefinition extends Definition<OwnBuildModel>, OwnBuildModel extends BuildModel> {
     /**
      * Specify the implementation type to use when creating instances of the definition object in the DSL.  Feature bindings that declare
@@ -33,6 +37,8 @@ public interface DeclaredProjectFeatureBindingBuilder<OwnDefinition extends Defi
      *
      * @param implementationType the implementation type to use
      * @return this builder
+     *
+     * @since 9.5.0
      */
     DeclaredProjectFeatureBindingBuilder<OwnDefinition, OwnBuildModel> withUnsafeDefinitionImplementationType(Class<? extends OwnDefinition> implementationType);
 
@@ -41,6 +47,8 @@ public interface DeclaredProjectFeatureBindingBuilder<OwnDefinition extends Defi
      *
      * @param implementationType the implementation type to use
      * @return this builder
+     *
+     * @since 9.5.0
      */
     DeclaredProjectFeatureBindingBuilder<OwnDefinition, OwnBuildModel> withBuildModelImplementationType(Class<? extends OwnBuildModel> implementationType);
 
@@ -56,6 +64,8 @@ public interface DeclaredProjectFeatureBindingBuilder<OwnDefinition extends Defi
      * If a definition does not meet these criteria, it must be marked as unsafe using this method.
      *
      * @return this builder
+     *
+     * @since 9.5.0
      */
     DeclaredProjectFeatureBindingBuilder<OwnDefinition, OwnBuildModel> withUnsafeDefinition();
 
@@ -73,6 +83,8 @@ public interface DeclaredProjectFeatureBindingBuilder<OwnDefinition extends Defi
      * If an apply action needs additional services, it must be marked as unsafe using this method.
      *
      * @return this builder
+     *
+     * @since 9.5.0
      */
     DeclaredProjectFeatureBindingBuilder<OwnDefinition, OwnBuildModel> withUnsafeApplyAction();
 }

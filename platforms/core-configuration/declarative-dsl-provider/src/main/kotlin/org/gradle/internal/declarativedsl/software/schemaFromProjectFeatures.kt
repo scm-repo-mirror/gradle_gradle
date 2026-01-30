@@ -18,10 +18,10 @@ package org.gradle.internal.declarativedsl.software
 
 import org.gradle.api.Project
 import org.gradle.api.internal.DynamicObjectAware
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.TargetTypeInformation.BuildModelTargetTypeInformation
-import org.gradle.api.internal.plugins.TargetTypeInformation.DefinitionTargetTypeInformation
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.TargetTypeInformation.BuildModelTargetTypeInformation
+import org.gradle.api.features.plugins.TargetTypeInformation.DefinitionTargetTypeInformation
 import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.declarative.dsl.schema.CustomAccessorIdentifier
 import org.gradle.declarative.dsl.schema.ConfigureAccessor

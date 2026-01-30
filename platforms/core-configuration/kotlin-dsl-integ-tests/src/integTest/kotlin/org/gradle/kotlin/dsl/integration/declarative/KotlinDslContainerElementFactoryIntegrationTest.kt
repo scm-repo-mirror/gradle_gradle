@@ -20,11 +20,11 @@ import org.gradle.api.Namer
 import org.gradle.api.features.registration.TaskRegistrar
 import org.gradle.api.internal.AbstractNamedDomainObjectContainer
 import org.gradle.api.internal.CollectionCallbackActionDecorator
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectTypeBinding
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
 import org.gradle.internal.reflect.Instantiator
 import org.junit.Test
 

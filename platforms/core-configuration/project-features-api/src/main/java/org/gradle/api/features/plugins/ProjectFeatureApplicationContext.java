@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,32 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
+import org.gradle.api.Incubating;
 import org.gradle.api.model.ObjectFactory;
 
 /**
  * Represents the context in which a project feature is applied and the services
  * available in that context.
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface ProjectFeatureApplicationContext {
 
     /**
      * The ObjectFactory for the Project object the project feature is applied to.
+     *
+     * @since 9.5.0
      */
     ObjectFactory getObjectFactory();
 
     /**
      * Allows a {@link ProjectFeatureApplyAction} or {@link ProjectTypeApplyAction} to access the build model object of a given
      * definition object.
+     *
+     * @since 9.5.0
      */
     <T extends Definition<V>, V extends BuildModel> V getBuildModel(T definition);
 
@@ -47,6 +55,8 @@ public interface ProjectFeatureApplicationContext {
      * @see ProjectFeatureApplicationContext#registerBuildModel(Definition, Class) the other overload to create a build model of a specific implementation type.
      *
      * @throws IllegalStateException if there is already a build model instance registered for the definition.
+     *
+     * @since 9.5.0
      */
     <T extends Definition<V>, V extends BuildModel> V registerBuildModel(T definition);
 
@@ -61,6 +71,8 @@ public interface ProjectFeatureApplicationContext {
      * @see ProjectFeatureApplicationContext#registerBuildModel(Definition, Class) the other overload to create a build model of a specific implementation type.
      *
      * @throws IllegalStateException if there is already a build model instance registered for the definition.
+     *
+     * @since 9.5.0
      */
     <T extends Definition<V>, V extends BuildModel> V registerBuildModel(T definition, Class<? extends V> implementationType);
 }

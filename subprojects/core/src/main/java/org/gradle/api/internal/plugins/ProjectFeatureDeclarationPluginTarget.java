@@ -20,6 +20,8 @@ import com.google.common.reflect.TypeToken;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.features.plugins.BindsProjectFeature;
+import org.gradle.api.features.plugins.BindsProjectType;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.internal.plugins.software.RegistersSoftwareTypes;
 import org.gradle.api.internal.plugins.software.RegistersProjectFeatures;

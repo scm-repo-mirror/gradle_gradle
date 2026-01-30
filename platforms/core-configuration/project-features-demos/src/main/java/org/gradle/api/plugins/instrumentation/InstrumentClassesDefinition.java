@@ -18,7 +18,7 @@ package org.gradle.api.plugins.instrumentation;
 
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.file.RegularFileProperty;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.Definition;
 import org.jspecify.annotations.NonNull;
 
 public interface InstrumentClassesDefinition extends Definition<@NonNull InstrumentClassesModel> {

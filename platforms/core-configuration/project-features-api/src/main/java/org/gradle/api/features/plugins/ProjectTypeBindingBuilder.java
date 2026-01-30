@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
+
+import org.gradle.api.Incubating;
 
 /**
  * A builder for creating project type bindings as well as declaring build logic
  * associated with the binding.
+ *
+ * @since 9.5.0
  */
+@Incubating
 public interface ProjectTypeBindingBuilder {
     /**
      * Create a binding for a project type definition object in the DSL with the provided name.
@@ -31,6 +36,8 @@ public interface ProjectTypeBindingBuilder {
      * @return a {@link DeclaredProjectFeatureBindingBuilder} that can be used to further configure the binding
      * @param <OwnDefinition> the type of the project type definition object
      * @param <OwnBuildModel> the type of the build model object for this project type
+     *
+     * @since 9.5.0
      */
     <OwnDefinition extends Definition<OwnBuildModel>, OwnBuildModel extends BuildModel> DeclaredProjectFeatureBindingBuilder<OwnDefinition, OwnBuildModel> bindProjectType(
         String name,

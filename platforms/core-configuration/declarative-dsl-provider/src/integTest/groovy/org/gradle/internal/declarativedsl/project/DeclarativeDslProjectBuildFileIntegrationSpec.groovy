@@ -16,9 +16,9 @@
 
 package org.gradle.internal.declarativedsl.project
 
-import org.gradle.api.internal.plugins.BindsProjectType
-import org.gradle.api.internal.plugins.ProjectTypeBinding
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.BindsProjectType
+import org.gradle.api.features.plugins.ProjectTypeBinding
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
 import org.gradle.api.internal.plugins.software.RegistersSoftwareTypes
 import org.gradle.api.features.registration.TaskRegistrar
 import org.gradle.integtests.fixtures.AbstractIntegrationSpec

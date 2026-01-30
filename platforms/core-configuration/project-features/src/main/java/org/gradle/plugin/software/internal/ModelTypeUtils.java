@@ -16,8 +16,8 @@
 
 package org.gradle.plugin.software.internal;
 
-import org.gradle.api.internal.plugins.BuildModel;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.Definition;
 import org.gradle.internal.inspection.DefaultTypeParameterInspection;
 import org.gradle.internal.inspection.TypeParameterInspection;
 

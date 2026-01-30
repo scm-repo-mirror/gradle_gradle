@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,60 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.plugins;
+package org.gradle.api.features.plugins;
 
+import org.gradle.api.Incubating;
+
+/**
+ * Information about the target type of a project feature binding.
+ *
+ * @param <T> the type of the target
+ *
+ * @since 9.5.0
+ */
+@Incubating
 public interface TargetTypeInformation<T> {
 
+    /**
+     * The name of the target class.
+     *
+     * @return the name of the target class
+     *
+     * @since 9.5.0
+     */
     String getTargetClassName();
 
+    /**
+     * Target type information for binding to a definition type.
+     *
+     * @param <T> the type of the definition
+     *
+     * @since 9.5.0
+     */
+    @Incubating
     class DefinitionTargetTypeInformation<T> implements TargetTypeInformation<T> {
-        public final Class<T> definitionType;
+        private final Class<T> definitionType;
         private final String targetClassName;
 
+        /**
+         * Constructs a new {@code DefinitionTargetTypeInformation}.
+         *
+         * @param definitionType the definition type
+         *
+         * @since 9.5.0
+         */
         public DefinitionTargetTypeInformation(Class<T> definitionType) {
             this.definitionType = definitionType;
             this.targetClassName = definitionType.getName();
+        }
+
+        /**
+         * The definition type.
+         *
+         * @since 9.5.0
+         */
+        public Class<T> getDefinitionType() {
+            return definitionType;
         }
 
         @Override
@@ -57,13 +98,37 @@ public interface TargetTypeInformation<T> {
         }
     }
 
+    /**
+     * Target type information for binding to a build model type.
+     *
+     * @param <T> the type of the build model
+     *
+     * @since 9.5.0
+     */
+    @Incubating
     class BuildModelTargetTypeInformation<T extends BuildModel> implements TargetTypeInformation<Definition<T>> {
-        public final Class<T> buildModelType;
+        private final Class<T> buildModelType;
         private final String targetClassName;
 
+        /**
+         * Constructs a new {@code BuildModelTargetTypeInformation}.
+         *
+         * @param buildModelType the build model type
+         *
+         * @since 9.5.0
+         */
         public BuildModelTargetTypeInformation(Class<T> buildModelType) {
             this.buildModelType = buildModelType;
             this.targetClassName = buildModelType.getName();
+        }
+
+        /**
+         * The build model type.
+         *
+         * @since 9.5.0
+         */
+        public Class<T> getBuildModelType() {
+            return buildModelType;
         }
 
         @Override

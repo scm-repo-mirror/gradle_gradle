@@ -21,8 +21,8 @@ import org.gradle.api.Project
 import org.gradle.api.initialization.Settings
 import org.gradle.api.internal.SettingsInternal
 import org.gradle.api.internal.initialization.ClassLoaderScope
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.TargetTypeInformation
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.TargetTypeInformation
 import org.gradle.api.reflect.TypeOf
 import org.gradle.declarative.dsl.evaluation.InterpretationSequence
 import org.gradle.declarative.dsl.schema.ConfigureFromGetterOrigin

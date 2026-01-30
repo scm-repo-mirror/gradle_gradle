@@ -17,7 +17,7 @@
 package org.gradle.api.plugins.java;
 
 import org.gradle.api.Named;
-import org.gradle.api.internal.plugins.BuildModel;
+import org.gradle.api.features.plugins.BuildModel;
 
 public interface JvmOutputs extends BuildModel, Named, HasCompiledBytecode, HasProcessedResources {
 }

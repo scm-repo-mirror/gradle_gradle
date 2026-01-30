@@ -22,10 +22,10 @@ import org.gradle.api.file.ProjectLayout
 import org.gradle.api.internal.DynamicObjectAware
 import org.gradle.api.internal.initialization.ClassLoaderScope
 import org.gradle.api.internal.model.ObjectFactoryFactory
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
 import org.gradle.api.internal.plugins.PluginManagerInternal
-import org.gradle.api.internal.plugins.ProjectFeatureApplyAction
+import org.gradle.api.features.plugins.ProjectFeatureApplyAction
 import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.plugins.ExtensionAware

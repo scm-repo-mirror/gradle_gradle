@@ -1,11 +1,11 @@
 package org.gradle.api.internal.plugins.features.dsl
 
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.DeclaredProjectFeatureBindingBuilder
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectFeatureApplicationContext
-import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilder
-import org.gradle.api.internal.plugins.ProjectTypeBindingBuilder
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.DeclaredProjectFeatureBindingBuilder
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectFeatureApplicationContext
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder
+import org.gradle.api.features.plugins.ProjectTypeBindingBuilder
 import org.gradle.internal.Cast
 import kotlin.reflect.KClass
 import kotlin.reflect.full.allSupertypes
@@ -30,8 +30,8 @@ import kotlin.reflect.full.allSupertypes
  * @param OwnBuildModel The type of the build model associated with the project feature definition.
  */
 inline fun <
-    reified Definition : org.gradle.api.internal.plugins.Definition<OwnBuildModel>,
-    reified TargetDefinition : org.gradle.api.internal.plugins.Definition<*>,
+    reified Definition : org.gradle.api.features.plugins.Definition<OwnBuildModel>,
+    reified TargetDefinition : org.gradle.api.features.plugins.Definition<*>,
     reified OwnBuildModel : BuildModel
     >
     ProjectFeatureBindingBuilder.bindProjectFeature(

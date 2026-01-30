@@ -22,8 +22,8 @@ import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.ExternalModuleDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.internal.DynamicObjectAware
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
 import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.api.provider.Provider

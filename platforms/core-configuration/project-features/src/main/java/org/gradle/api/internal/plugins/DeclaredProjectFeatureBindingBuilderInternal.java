@@ -16,6 +16,10 @@
 
 package org.gradle.api.internal.plugins;
 
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.DeclaredProjectFeatureBindingBuilder;
+import org.gradle.api.features.plugins.Definition;
+
 public interface DeclaredProjectFeatureBindingBuilderInternal<T extends Definition<V>, V extends BuildModel> extends DeclaredProjectFeatureBindingBuilder<T, V> {
 
     ProjectFeatureBindingDeclaration<T, V> build();

@@ -1,3 +1,10 @@
 {
-    "acceptedApiChanges": []
+    "acceptedApiChanges": [
+        {
+            "type": "org.gradle.api.features.plugins.BuildModel$None",
+            "member": "Constructor org.gradle.api.features.plugins.BuildModel$None()",
+            "acceptation": "Implicit default constructor",
+            "changes": []
+        }
+    ]
 }

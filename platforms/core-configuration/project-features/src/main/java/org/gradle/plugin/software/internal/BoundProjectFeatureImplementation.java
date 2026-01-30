@@ -16,8 +16,8 @@
 
 package org.gradle.plugin.software.internal;
 
-import org.gradle.api.internal.plugins.BuildModel;
-import org.gradle.api.internal.plugins.Definition;
+import org.gradle.api.features.plugins.BuildModel;
+import org.gradle.api.features.plugins.Definition;
 
 public interface BoundProjectFeatureImplementation<T extends Definition<V>, V extends BuildModel> extends ProjectFeatureImplementation<T, V> {
 }

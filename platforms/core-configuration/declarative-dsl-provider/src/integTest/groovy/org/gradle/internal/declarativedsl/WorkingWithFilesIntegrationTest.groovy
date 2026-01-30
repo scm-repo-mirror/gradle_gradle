@@ -16,8 +16,8 @@
 
 package org.gradle.internal.declarativedsl
 
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
 import org.gradle.integtests.fixtures.AbstractIntegrationSpec
 import org.gradle.integtests.fixtures.polyglot.PolyglotDslTest
 import org.gradle.integtests.fixtures.polyglot.PolyglotTestFixture

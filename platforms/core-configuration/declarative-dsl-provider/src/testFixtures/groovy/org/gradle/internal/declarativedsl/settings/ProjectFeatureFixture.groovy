@@ -17,16 +17,16 @@
 package org.gradle.internal.declarativedsl.settings
 
 import org.gradle.api.features.file.ProjectFeatureLayout
-import org.gradle.api.internal.plugins.BuildModel
-import org.gradle.api.internal.plugins.Definition
-import org.gradle.api.internal.plugins.ProjectFeatureBindingBuilder
-import org.gradle.api.internal.plugins.ProjectFeatureBinding
+import org.gradle.api.features.plugins.BuildModel
+import org.gradle.api.features.plugins.Definition
+import org.gradle.api.features.plugins.ProjectFeatureBindingBuilder
+import org.gradle.api.features.plugins.ProjectFeatureBinding
 import org.gradle.api.features.registration.TaskRegistrar
 import org.gradle.api.provider.ProviderFactory
 import org.gradle.api.tasks.TaskContainer
 import org.gradle.declarative.dsl.model.annotations.HiddenInDefinition
 import org.gradle.test.fixtures.plugin.PluginBuilder
-import org.gradle.api.internal.plugins.BindsProjectFeature
+import org.gradle.api.features.plugins.BindsProjectFeature
 import org.gradle.api.internal.plugins.software.RegistersProjectFeatures
 import org.gradle.api.internal.plugins.software.RegistersSoftwareTypes
 
